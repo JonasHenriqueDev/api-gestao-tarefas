@@ -30,7 +30,7 @@ public class TarefaControlador {
         return ResponseEntity.ok(entity);
     }
 
-    @PostMapping
+    @PostMapping("/criar")
     @ResponseStatus(HttpStatus.CREATED)
     public Tarefa adicionar(@RequestBody Tarefa tarefa) {
         return tarefaServico.salvarTarefa(tarefa);

@@ -22,5 +22,7 @@ public class Tarefa {
     @Temporal(TemporalType.DATE)
     private Date data;
 
+    @Column(columnDefinition = "BOOLEAN")
+    private Boolean concluida;
 
 }
