@@ -43,5 +43,9 @@ public class TarefaControlador {
         return tarefaServico.salvarTarefa(tarefaAtual);
     }
 
+    @DeleteMapping("/deletar/{id}")
+    public void deletarPorId(@PathVariable("id") Long id) {
+        tarefaServico.deletarTarefaPorId(id);
+    }
 
 }
