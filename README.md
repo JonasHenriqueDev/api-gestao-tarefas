@@ -6,4 +6,4 @@ Crie uma API de gestão de tarefas (Modele a entidade Tarefa com os atributos da
 • ✅ Um método para recuperar uma tarefa específica pelo ID (usando o método HTTP GET).  
 • ✅ Um método para criar uma nova tarefa (usando o método HTTP POST).  
 • ✅ Um método para atualizar uma tarefa existente pelo ID (usando o método HTTP PUT ou PATCH).  
-• Um método para excluir uma tarefa pelo ID (usando o método HTTP DELETE).  
+• ✅ Um método para excluir uma tarefa pelo ID (usando o método HTTP DELETE).  
