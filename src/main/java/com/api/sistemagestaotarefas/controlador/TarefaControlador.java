@@ -2,6 +2,7 @@ package com.api.sistemagestaotarefas.controlador;
 
 import com.api.sistemagestaotarefas.dominio.Tarefa;
 import com.api.sistemagestaotarefas.servico.TarefaServico;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,11 +30,18 @@ public class TarefaControlador {
         return ResponseEntity.ok(entity);
     }
 
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Tarefa adicionar(@RequestBody Tarefa tarefa) {
-        return tarefaServico.criarTarefa(tarefa);
+        return tarefaServico.salvarTarefa(tarefa);
     }
+
+    @PutMapping("/atualizar/{id}")
+    public Tarefa atualizarPorId(@PathVariable Long id, @RequestBody Tarefa tarefa) {
+        Tarefa tarefaAtual = tarefaServico.findTarefaById(id);
+        BeanUtils.copyProperties(tarefa, tarefaAtual, "id");
+        return tarefaServico.salvarTarefa(tarefaAtual);
+    }
+
 
 }

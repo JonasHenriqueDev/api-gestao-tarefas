@@ -21,7 +21,7 @@ public class TarefaServico {
         return tarefaRepositorio.findById(id).get();
     }
 
-    public Tarefa criarTarefa(Tarefa tarefa) {
+    public Tarefa salvarTarefa(Tarefa tarefa) {
         return tarefaRepositorio.save(tarefa);
     }
 }
